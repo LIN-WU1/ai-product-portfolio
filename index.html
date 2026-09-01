@@ -690,6 +690,99 @@ section{
    ABOUT
 ========================= */
 
+/* =========================
+   VIDEO MODAL
+========================= */
+
+body.modal-open{
+    overflow:hidden;
+}
+
+.video-modal{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:24px;
+
+    background:rgba(0,0,0,.78);
+
+    backdrop-filter:blur(10px);
+}
+
+.video-modal.is-open{
+    display:flex;
+}
+
+.video-modal-inner{
+    position:relative;
+
+    width:min(960px,100%);
+
+    background:#000;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.video-modal video{
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    max-height:82vh;
+
+    background:#000;
+}
+
+.video-modal-close{
+    position:absolute;
+
+    top:12px;
+    right:12px;
+
+    z-index:2;
+
+    width:36px;
+    height:36px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.45);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    line-height:1;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    transition:.2s;
+}
+
+.video-modal-close:hover{
+    background:rgba(0,0,0,.7);
+
+    transform:scale(1.04);
+}
+
 .about-grid{
     display:grid;
 
@@ -863,6 +956,68 @@ footer{
         margin-top:20px;
     }
 
+}
+
+body.modal-open{
+    overflow:hidden;
+}
+
+.video-modal{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:rgba(0,0,0,.78);
+    backdrop-filter:blur(10px);
+}
+
+.video-modal.is-open{
+    display:flex;
+}
+
+.video-modal-inner{
+    position:relative;
+    width:min(960px,100%);
+    background:#000;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.video-modal video{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:82vh;
+    background:#000;
+}
+
+.video-modal-close{
+    position:absolute;
+    top:12px;
+    right:12px;
+    z-index:2;
+    width:36px;
+    height:36px;
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:50%;
+    background:rgba(0,0,0,.45);
+    color:#fff;
+    cursor:pointer;
+    font-size:22px;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.2s;
+}
+
+.video-modal-close:hover{
+    background:rgba(0,0,0,.7);
+    transform:scale(1.04);
 }
 
 </style>
@@ -1501,14 +1656,13 @@ rel="noopener"
             AI Video · 非遗视觉叙事 · Visual Storytelling
         </div>
 
-        <a
-            class="button award-play"
-            href="./assets/chengkai-shoulong/work.mp4"
-            target="_blank"
-            rel="noopener"
-        >
-            ▶ 播放作品
-        </a>
+<button
+    type="button"
+    class="button award-play award-video-btn"
+    data-video="https://ai-product-portfolio-1479424939.cos.ap-guangzhou.myqcloud.com/work.mp4"
+>
+    ▶ 播放作品
+</button>
 
     </div>
 
@@ -1855,6 +2009,124 @@ download
 
 </footer>
 
+
+<!-- =========================
+     VIDEO MODAL
+========================= -->
+
+<div
+    class="video-modal"
+    id="videoModal"
+    aria-hidden="true"
+>
+
+    <div class="video-modal-inner">
+
+        <button
+            type="button"
+            class="video-modal-close"
+            id="videoModalClose"
+            aria-label="关闭视频"
+        >
+            ×
+        </button>
+
+        <video
+            id="portfolioVideo"
+            controls
+            playsinline
+            preload="metadata"
+        ></video>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const videoModal = document.getElementById("videoModal");
+const portfolioVideo = document.getElementById("portfolioVideo");
+const videoModalClose = document.getElementById("videoModalClose");
+
+
+function openVideo(url){
+
+    portfolioVideo.src = url;
+
+    videoModal.classList.add("is-open");
+
+    videoModal.setAttribute("aria-hidden", "false");
+
+    document.body.classList.add("modal-open");
+
+    const playPromise = portfolioVideo.play();
+
+    if(playPromise !== undefined){
+
+        playPromise.catch(() => {});
+
+    }
+
+}
+
+
+function closeVideo(){
+
+    portfolioVideo.pause();
+
+    portfolioVideo.removeAttribute("src");
+
+    portfolioVideo.load();
+
+    videoModal.classList.remove("is-open");
+
+    videoModal.setAttribute("aria-hidden", "true");
+
+    document.body.classList.remove("modal-open");
+
+}
+
+
+document.querySelectorAll(".award-video-btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        openVideo(button.dataset.video);
+
+    });
+
+});
+
+
+videoModalClose.addEventListener("click", closeVideo);
+
+
+videoModal.addEventListener("click", event => {
+
+    if(event.target === videoModal){
+
+        closeVideo();
+
+    }
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+    if(
+        event.key === "Escape" &&
+        videoModal.classList.contains("is-open")
+    ){
+
+        closeVideo();
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>
