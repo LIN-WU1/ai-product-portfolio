@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lin｜AI Product Portfolio</title>
+
+<style>
+
+.contact-info{
+    margin-top:32px;
+}
+
+.contact-item{
+    display:flex;
+    gap:30px;
+    align-items:center;
+    margin-bottom:14px;
+    font-size:16px;
+}
+
+.contact-item span{
+    width:40px;
+    color:#888;
+    font-size:13px;
+}
+
+.contact-item a{
+    color:#222;
+}
+
+.contact-item a:hover{
+    color:#555;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+    background:#fafafa;
+    color:#151515;
+    line-height:1.7;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1120px, calc(100% - 48px));
+    margin:auto;
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    height:68px;
+
+    background:rgba(250,250,250,.92);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid #e8e8e8;
+}
+
+.nav-inner{
+    height:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-weight:700;
+    letter-spacing:-.02em;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+
+    font-size:14px;
+    color:#666;
+}
+
+.nav-links a{
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:#111;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:125px 0 110px;
+}
+
+.eyebrow{
+    font-size:12px;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+    color:#777;
+}
+
+.hero h1{
+    margin-top:22px;
+
+    font-size:
+    clamp(52px, 8vw, 92px);
+
+    line-height:1.02;
+
+    letter-spacing:-.055em;
+
+    font-weight:800;
+}
+
+.gradient{
+    background:
+    linear-gradient(
+        100deg,
+        #111,
+        #6566e7
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero-description{
+    max-width:680px;
+
+    margin-top:30px;
+
+    font-size:19px;
+
+    color:#5e5e5e;
+}
+
+.stats{
+    display:flex;
+
+    gap:42px;
+
+    margin-top:42px;
+
+    flex-wrap:wrap;
+}
+
+.stat-number{
+    font-size:28px;
+    font-weight:700;
+}
+
+.stat-label{
+    display:block;
+
+    margin-top:2px;
+
+    font-size:13px;
+
+    color:#777;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:90px 0;
+
+    border-top:1px solid #e6e6e6;
+}
+
+.section-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:40px;
+
+    margin-bottom:45px;
+}
+
+.section-label{
+    font-size:12px;
+
+    letter-spacing:.14em;
+
+    color:#777;
+
+    text-transform:uppercase;
+}
+
+.section-title{
+    margin-top:10px;
+
+    font-size:44px;
+
+    line-height:1.1;
+
+    letter-spacing:-.04em;
+}
+
+.section-intro{
+    max-width:430px;
+
+    color:#777;
+
+    font-size:15px;
+}
+
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project{
+    background:white;
+
+    border:1px solid #e5e5e5;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    margin-bottom:22px;
+}
+
+.project-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:30px;
+}
+
+.project-number{
+    font-size:12px;
+
+    color:#888;
+
+    letter-spacing:.08em;
+}
+
+.project h3{
+    margin-top:8px;
+
+    font-size:30px;
+
+    line-height:1.3;
+
+    letter-spacing:-.025em;
+}
+
+.project-description{
+    max-width:800px;
+
+    margin-top:12px;
+
+    color:#5f5f5f;
+}
+
+.project-type{
+    border:1px solid #ddd;
+
+    border-radius:999px;
+
+    padding:5px 12px;
+
+    font-size:12px;
+
+    color:#666;
+
+    white-space:nowrap;
+}
+
+
+/* =========================
+   CASE STUDY
+========================= */
+
+.case-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:14px;
+
+    margin-top:32px;
+}
+
+.case-box{
+    padding:22px;
+
+    background:#f6f6f6;
+
+    border-radius:16px;
+}
+
+.case-box-title{
+    font-size:13px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+}
+
+.case-box-text{
+    font-size:14px;
+
+    color:#666;
+}
+
+
+/* =========================
+   FLOW
+========================= */
+
+.demo{
+    margin-top:30px;
+
+    padding-top:27px;
+
+    border-top:1px solid #e8e8e8;
+}
+
+.demo-label{
+    font-size:11px;
+
+    letter-spacing:.12em;
+
+    color:#888;
+
+    text-transform:uppercase;
+}
+
+.flow{
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin:17px 0;
+}
+
+.flow-item{
+    padding:7px 12px;
+
+    border:1px solid #ddd;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    background:white;
+}
+
+.arrow{
+    color:#aaa;
+}
+
+.demo-note{
+    padding:20px;
+
+    background:#f6f6f6;
+
+    border-radius:15px;
+
+    font-size:14px;
+
+    color:#555;
+}
+
+.buttons{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.button{
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:10px 17px;
+
+    border-radius:999px;
+
+    background:#151515;
+
+    color:white;
+
+    font-size:14px;
+
+    transition:.2s;
+}
+
+.button:hover{
+    transform:translateY(-2px);
+}
+
+.button.secondary{
+    background:white;
+
+    color:#222;
+
+    border:1px solid #ddd;
+}
+
+
+/* =========================
+   AWARDS
+========================= */
+
+.feature-award{
+    position:relative;
+
+    min-height:360px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:42px;
+
+    border-radius:24px;
+
+    color:white;
+}
+
+.award-cover{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:0;
+}
+
+.award-overlay{
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.72)
+        );
+
+    z-index:1;
+}
+
+.award-content{
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+}
+
+.award-play{
+    margin-top:24px;
+
+    width:max-content;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(6px);
+}
+
+.award-play:hover{
+    background:rgba(255,255,255,.22);
+}
+.award-label{
+    font-size:11px;
+
+    letter-spacing:.13em;
+
+    color:#fff;
+}
+
+.feature-award h3{
+    margin-top:13px;
+
+    font-size:32px;
+}
+
+.feature-award p{
+    margin-top:8px;
+
+    color:#c7c7c7;
+}
+
+.award-meta{
+    margin-top:18px;
+
+    font-size:13px;
+
+    color:#999;
+}
+
+.award-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:15px;
+}
+
+.award-card{
+    background:white;
+
+    border:1px solid #e5e5e5;
+
+    border-radius:20px;
+
+    padding:28px;
+}
+
+.award-card h3{
+    margin-top:10px;
+
+    font-size:21px;
+
+    line-height:1.45;
+}
+
+.award-card p{
+    margin-top:8px;
+
+    color:#666;
+
+    font-size:14px;
+}
+
+.award-work{
+    position:relative;
+
+    min-height:420px;
+
+    padding:28px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    color:white;
+}
+
+.award-card-cover{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:0;
+}
+
+.award-card-overlay{
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.78)
+        );
+
+    z-index:1;
+}
+
+.award-card-content{
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+}
+
+.award-card-content .award-label{
+    color:#fff;
+}
+
+.award-card-content h3{
+    color:#fff;
+}
+
+.award-card-content p{
+    color:#fff;
+}
+
+.award-card-content .award-meta{
+    color:#fff;
+
+    margin-top:10px;
+}
+
+.award-card-play{
+    margin-top:18px;
+
+    width:max-content;
+
+    padding:9px 15px;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(6px);
+
+    font-size:13px;
+}
+
+.award-card-play:hover{
+    background:rgba(255,255,255,.22);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:60px;
+}
+
+.about-text{
+    color:#5f5f5f;
+
+    font-size:16px;
+}
+
+.about-text p+p{
+    margin-top:20px;
+}
+
+.focus-title{
+    font-size:12px;
+
+    letter-spacing:.12em;
+
+    color:#888;
+
+    text-transform:uppercase;
+}
+
+.focus-list{
+    margin-top:14px;
+
+    font-size:17px;
+
+    line-height:2;
+}
+
+
+/* =========================
+   RESUME
+========================= */
+
+.resume-box{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:30px;
+
+    background:white;
+
+    border:1px solid #e4e4e4;
+
+    border-radius:20px;
+}
+
+.resume-title{
+    font-weight:700;
+}
+
+.resume-description{
+    margin-top:4px;
+
+    color:#777;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-text{
+    color:#666;
+
+    font-size:17px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:60px 0 70px;
+
+    color:#888;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px){
+
+    .container{
+        width:min(100% - 32px,1120px);
+    }
+
+    .nav-links{
+        gap:13px;
+
+        font-size:12px;
+    }
+
+    .nav-links a:nth-child(3){
+        display:none;
+    }
+
+    .hero{
+        padding:80px 0;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero-description{
+        font-size:17px;
+    }
+
+    section{
+        padding:70px 0;
+    }
+
+    .section-header{
+        display:block;
+    }
+
+    .section-intro{
+        margin-top:20px;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
+    .project{
+        padding:25px;
+    }
+
+    .project-top{
+        display:block;
+    }
+
+    .project-type{
+        display:inline-block;
+
+        margin-top:15px;
+    }
+
+    .case-grid,
+    .award-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .resume-box{
+        display:block;
+    }
+
+    .resume-box .button{
+        margin-top:20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<div class="container nav-inner">
+
+<div class="logo">
+LIN / AI PRODUCT
+</div>
+
+<div class="nav-links">
+
+<a href="#projects">项目</a>
+
+<a href="#achievements">获奖</a>
+
+<a href="#about">关于</a>
+
+<a href="#resume">简历</a>
+
+<a href="#contact">联系</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="container hero">
+
+<div class="eyebrow">
+AI Product × Design
+</div>
+
+<h1>
+
+用设计思维<br>
+
+<span class="gradient">
+探索 AI 产品。
+</span>
+
+</h1>
+
+
+<p class="hero-description">
+
+视觉传达设计背景，关注 Agent、Workflow 与 Creative Technology。
+通过真实创作实践发现问题，并将创作经验转化为可用的 AI 产品。
+
+</p>
+
+
+<div class="stats">
+
+<div>
+<div class="stat-number">03</div>
+<div class="stat-label">AI Product Projects</div>
+</div>
+
+<div>
+<div class="stat-number">04</div>
+<div class="stat-label">Creative Awards</div>
+</div>
+
+<div>
+<div class="stat-number">01</div>
+<div class="stat-label">National 1st Prize</div>
+</div>
+
+</div>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+01 / Projects
+</div>
+
+<h2 class="section-title">
+
+AI 产品<br>
+
+<span class="gradient">
+项目
+</span>
+
+</h2>
+
+</div>
+
+
+<p class="section-intro">
+
+不是只展示“会什么”，而是展示我如何发现问题、
+设计 AI 解决方案，并把它做成可以实际使用的产品。
+
+</p>
+
+</div>
+
+
+
+<!-- PROJECT 01 -->
+
+<article class="project">
+
+<div class="project-top">
+
+<div>
+
+<div class="project-number">
+01 — COZE AGENT
+</div>
+
+<h3>
+AI影视导演｜分镜与 Prompt
+</h3>
+
+<p class="project-description">
+
+帮助创作者完成从故事构思、剧本优化到影视分镜设计和
+AI Video Prompt 生成，解决分镜设计困难、提示词不规范
+与重复生成成本高等问题。
+
+</p>
+
+</div>
+
+<div class="project-type">
+Agent
+</div>
+
+</div>
+
+
+
+<div class="case-grid">
+
+<div class="case-box">
+
+<div class="case-box-title">
+Problem
+</div>
+
+<div class="case-box-text">
+
+创作者有故事，却难以稳定转化为可执行的分镜与 Prompt。
+
+</div>
+
+</div>
+
+
+<div class="case-box">
+
+<div class="case-box-title">
+Solution
+</div>
+
+<div class="case-box-text">
+
+通过 Story Analysis → Storyboard → Prompt
+的 Agent 流程完成创作辅助。
+
+</div>
+
+</div>
+
+
+<div class="case-box">
+
+<div class="case-box-title">
+Output
+</div>
+
+<div class="case-box-text">
+
+输入故事，输出人物、场景、情绪、镜头设计
+与 AI Video Prompt。
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="demo">
+
+<div class="demo-label">
+Real-world Demo
+</div>
+
+
+<div class="flow">
+
+<span class="flow-item">
+故事输入
+</span>
+
+<span class="arrow">→</span>
+
+<span class="flow-item">
+Story Analysis
+</span>
+
+<span class="arrow">→</span>
+
+<span class="flow-item">
+Storyboard
+</span>
+
+<span class="arrow">→</span>
+
+<span class="flow-item">
+AI Video Prompt
+</span>
+
+</div>
+
+
+<div class="demo-note">
+
+<strong>案例：《东京深夜等待》</strong><br><br>
+
+一个年轻人深夜独自站在东京街头，等待一个没有出现的人。
+
+Agent 将创意拆解为故事核心、情绪方向、人物、
+视觉元素、视觉机会与创作风险，并继续支持分镜与 Prompt 生成。
+
+</div>
+
+
+<div class="buttons">
+
+<a
+class="button"
+href="https://www.coze.cn/s/WBJBGLdt8ss/"
+target="_blank"
+rel="noopener"
+>
+
+体验 AI影视导演 ↗
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PROJECT 02 -->
+
+<article class="project">
+
+<div class="project-top">
+
+<div>
+
+<div class="project-number">
+02 — DIFY WORKFLOW
+</div>
+
+<h3>
+AI视觉创意总监
+</h3>
+
+<p class="project-description">
+
+将用户输入的故事转化为完整视觉创意方案，
+通过故事分析、视觉方向设计、知识检索、
+海报概念生成与图像 Prompt 生成，
+形成可直接用于视觉创作的 AI Workflow。
+
+</p>
+
+</div>
+
+<div class="project-type">
+Workflow
+</div>
+
+</div>
+
+
+
+<div class="case-grid">
+
+<div class="case-box">
+
+<div class="case-box-title">
+Input
+</div>
+
+<div class="case-box-text">
+
+故事、主题、视觉需求与创作限制。
+
+</div>
+
+</div>
+
+
+<div class="case-box">
+
+<div class="case-box-title">
+Workflow
+</div>
+
+<div class="case-box-text">
+
+Story Analysis → Visual Direction →
+Knowledge Retrieval → Poster Concept →
+Image Prompt。
+
+</div>
+
+</div>
+
+
+<div class="case-box">
+
+<div class="case-box-title">
+Output
+</div>
+
+<div class="case-box-text">
+
+结构化视觉创意方案与可继续用于生成的
+Image Prompt。
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="demo">
+
+<div class="demo-label">
+Live Workflow
+</div>
+
+
+<div class="flow">
+
+<span class="flow-item">
+Story
+</span>
+
+<span class="arrow">→</span>
+
+<span class="flow-item">
+Analysis
+</span>
+
+<span class="arrow">→</span>
+
+<span class="flow-item">
+Visual Direction
+</span>
+
+<span class="arrow">→</span>
+
+<span class="flow-item">
+RAG
+</span>
+
+<span class="arrow">→</span>
+
+<span class="flow-item">
+Concept
+</span>
+
+<span class="arrow">→</span>
+
+<span class="flow-item">
+Prompt
+</span>
+
+</div>
+
+
+<div class="demo-note">
+
+重点展示 Workflow 如何把一个开放式创意问题
+拆成多个可控节点，而不是依赖一次性生成。
+
+</div>
+
+
+<div class="buttons">
+
+<a
+class="button"
+href="https://udify.app/workflow/0EB3eTXqMVOHa07c"
+target="_blank"
+rel="noopener"
+>
+
+体验 Dify Workflow ↗
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PROJECT 03 -->
+
+<article class="project">
+
+<div class="project-top">
+
+<div>
+
+<div class="project-number">
+03 — COZE AGENT
+</div>
+
+<h3>
+DailyFlow｜工作学习助手
+</h3>
+
+<p class="project-description">
+
+一个能够帮助用户整理任务、拆解计划、安排日程、
+持续记忆工作习惯，并进行每日复盘的个人工作 / 学习助手。
+
+</p>
+
+</div>
+
+<div class="project-type">
+Agent
+</div>
+
+</div>
+
+
+
+<div class="case-grid">
+
+<div class="case-box">
+
+<div class="case-box-title">
+Problem
+</div>
+
+<div class="case-box-text">
+
+任务分散、优先级不清，计划容易失效。
+
+</div>
+
+</div>
+
+
+<div class="case-box">
+
+<div class="case-box-title">
+Solution
+</div>
+
+<div class="case-box-text">
+
+通过 Agent 对任务进行拆解、排序与计划编排，
+并结合长期记忆。
+
+</div>
+
+</div>
+
+
+<div class="case-box">
+
+<div class="case-box-title">
+Output
+</div>
+
+<div class="case-box-text">
+
+优先级、每日计划、提醒与复盘反馈。
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="demo">
+
+<div class="demo-label">
+Live Demo
+</div>
+
+
+<div class="demo-note">
+
+展示用户从“把今天要做的事情告诉我”
+到“得到可执行计划与复盘”的完整交互路径。
+
+</div>
+
+
+<div class="buttons">
+
+<a
+class="button"
+href="https://www.coze.cn/store/agent/7679092903184023586?bot_id=true"
+target="_blank"
+rel="noopener"
+>
+
+体验 DailyFlow ↗
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+</section>
+
+
+
+<!-- =========================
+     ACHIEVEMENTS
+========================= -->
+
+<section id="achievements">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+02 / Achievements
+</div>
+
+<h2 class="section-title">
+
+创作<br>
+
+<span class="gradient">
+成果
+</span>
+
+</h2>
+
+</div>
+
+
+<p class="section-intro">
+
+真实的视觉创作实践，是我理解 AI 创作工具、
+用户痛点与产品化机会的起点。
+
+</p>
+
+</div>
+
+
+
+<div class="feature-award">
+
+    <img
+        src="./assets/chengkai-shoulong/cover.jpg"
+        alt="《撑开·收拢》"
+        class="award-cover"
+    >
+
+    <div class="award-overlay"></div>
+
+    <div class="award-content">
+
+        <div class="award-label">
+            NATIONAL FINAL · 1ST PRIZE
+        </div>
+
+        <h3>
+            《撑开·收拢》
+        </h3>
+
+        <p>
+            未来设计师全国总决赛一等奖
+        </p>
+
+        <div class="award-meta">
+            AI Video · 非遗视觉叙事 · Visual Storytelling
+        </div>
+
+        <a
+            class="button award-play"
+            href="./assets/chengkai-shoulong/work.mp4"
+            target="_blank"
+            rel="noopener"
+        >
+            ▶ 播放作品
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="award-grid">
+
+    <!-- 作品 02 -->
+
+    <div class="award-card award-work">
+
+        <img
+            src="./assets/shouzheng-rongxin/cover.jpg"
+            alt="《守正融新 匠心致远》"
+            class="award-card-cover"
+        >
+
+        <div class="award-card-overlay"></div>
+
+        <div class="award-card-content">
+
+            <div class="award-label">
+                SICHUAN · 1ST PRIZE
+            </div>
+
+            <h3>
+                《守正融新<br>
+                匠心致远》
+            </h3>
+
+            <p>
+                未来设计师四川赛区一等奖
+            </p>
+
+            <a
+                class="button award-card-play"
+                href="./assets/shouzheng-rongxin/work.mp4"
+                target="_blank"
+                rel="noopener"
+            >
+                ▶ 播放作品
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- 作品 03 -->
+
+    <div class="award-card award-work">
+
+        <img
+            src="./assets/feiyi-chuhai/cover.jpg"
+            alt="《非遗出海，向美而行》"
+            class="award-card-cover"
+        >
+
+        <div class="award-card-overlay"></div>
+
+        <div class="award-card-content">
+
+            <div class="award-label">
+                SICHUAN · 3RD PRIZE
+            </div>
+
+            <h3>
+                《非遗出海，<br>
+                向美而行》
+            </h3>
+
+            <p>
+                未来设计师四川赛区三等奖
+            </p>
+
+            <a
+                class="button award-card-play"
+                href="./assets/feiyi-chuhai/work.mp4"
+                target="_blank"
+                rel="noopener"
+            >
+                ▶ 播放作品
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- 作品 04 -->
+
+    <div class="award-card award-work">
+
+        <img
+            src="./assets/hongji-dongpo/cover.jpg"
+            alt="《鸿迹印三境，东坡见一心》"
+            class="award-card-cover"
+        >
+
+        <div class="award-card-overlay"></div>
+
+        <div class="award-card-content">
+
+            <div class="award-label">
+                PROVINCIAL · 2ND PRIZE
+            </div>
+
+            <h3>
+                《鸿迹印三境，<br>
+                东坡见一心》
+            </h3>
+
+            <p>
+                中国大学生计算机设计大赛省赛二等奖
+            </p>
+
+
+            <a
+                class="button award-card-play"
+                href="./assets/hongji-dongpo/work.mp4"
+                target="_blank"
+                rel="noopener"
+            >
+                ▶ 播放作品
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+03 / About
+</div>
+
+<h2 class="section-title">
+
+从创作者<br>
+
+<span class="gradient">
+到产品构建者。
+</span>
+
+</h2>
+
+</div>
+
+</div>
+
+
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<p>
+
+视觉传达设计背景，持续使用生成式 AI
+参与视觉创作，并将真实创作中的问题进一步
+转化为 Agent 与 Workflow 产品。
+
+</p>
+
+<p>
+
+关注 AI Product、Agent Design、
+Prompt Engineering、Workflow Design
+与 Creative Technology。
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<div class="focus-title">
+Focus
+</div>
+
+<div class="focus-list">
+
+AI Product Management<br>
+
+Agent / Workflow Design<br>
+
+Creative AI<br>
+
+Visual Communication
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     RESUME
+========================= -->
+
+<section id="resume">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+04 / Resume
+</div>
+
+<h2 class="section-title">
+
+正式<br>
+
+<span class="gradient">
+简历
+</span>
+
+</h2>
+
+</div>
+
+</div>
+
+
+
+<div class="resume-box">
+
+<div>
+
+<div class="resume-title">
+下载正式简历
+</div>
+
+
+</div>
+
+
+<a
+class="button"
+href="吴紫林.pdf"
+download
+>
+
+下载正式简历 ↓
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+05 / Contact
+</div>
+
+<h2 class="section-title">
+
+联系<br>
+
+<span class="gradient">
+我
+</span>
+
+</h2>
+
+</div>
+
+</div>
+
+
+<p class="contact-text">
+
+<div class="contact-info">
+
+    <div class="contact-item">
+        <span>邮箱</span>
+        <a href="mailto:2112254237@qq.com">
+            2112254237@qq.com
+        </a>
+    </div>
+
+    <div class="contact-item">
+        <span>电话</span>
+        <a href="tel:19881719431">
+            19881719431
+        </a>
+    </div>
+
+</div>
+
+</p>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<div class="container">
+
+© 2026 LIN · AI Product Portfolio
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
